@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absen Sekolah | By Ridho TKJ 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="h-full w-full overflow-auto" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);">
+   <div class="min-h-full p-6"><!-- Header -->
+    <div class="text-center mb-8">
+     <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4" style="background: #2dd4bf;">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      </svg>
+     </div>
+     <h1 id="school-name" class="text-3xl font-bold text-white mb-2">Absen Kelas TKJ Digital</h1>
+     <p id="subtitle-text" class="text-gray-300">Absen Kelas | Cr: Ridho TKJ 3</p>
+    </div><!-- Form Absen -->
+    <div class="max-w-md mx-auto rounded-2xl p-6 mb-8 shadow-xl" style="background: #f8fafc;">
+     <h2 class="text-xl font-semibold mb-4" style="color: #1e3a5f;">📝 Form Kehadiran</h2>
+     <form id="attendance-form" class="space-y-4">
+      <div><label for="nama" class="block text-sm font-medium mb-1" style="color: #374151;">Nama Siswa</label>
+ <select id="nama" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-400 focus:outline-none transition-colors" style="background: #ffffff;">
+  <option value="" disabled selected>Pilih Nama</option>
+  <option value="Ahmad Fata Ikram">Ahmad Faiq Ikram</option>
+  <option value="Akhmad Fadzi">Akhmad Fauzi</option>
+  <option value="Alinna Eua Nurbaurzal">Alinna Eva Nurhalizah</option>
+  <option value="Arjuna Eka Putra">Arjuna Eka Putra</option>
+  <option value="Baihaqi Avivi">Baihaqi Avivi</option>
+  <option value="Deby Citra Ramadhani">Deby Citra Ramadhani</option>
+  <option value="Diky Fabian Aryanto">Diky Fabian Aryanto</option>
+  <option value="Fitriya Oktaviyanti">Fitriya Oktaviyanti</option>
+  <option value="Giri Anadri">Giri Anadri</option>
+  <option value="Habibah">Habibah</option>
+  <option value="Kharisma Riski Yani">Kharisma Riski Yani</option>
+  <option value="Lia Intana">Lia Intana</option>
+  <option value="Lika Fitriya">Lika Fitriya</option>
+  <option value="Linda Hamidah">Linda Hamidah</option>
+  <option value="M. Haris Liyasa">M. Haris ilyasa</option>
+  <option value="M. Syah Badar">M. SyahBadar</option>
+  <option value="Nabila">Nabila</option>
+  <option value="Nailatul Autor">Nailatul Autor</option>
+  <option value="Nuranah">Nurana</option>
+  <option value="Raka Yanuarta">Raka Yanuarta</option>
+  <option value="Ridho Prasetyo">Ridho Prasetyo</option>
+  <option value="Riska Trisnawati">Riska Trisnawati</option>
+  <option value="Risma Wati">Risma Wati</option>
+  <option value="Rizki Arif Fahrudin">Rizki Arif Fahrudin</option>
+  <option value="Satria">Satria</option>
+  <option value="Sekar Tanti">Sekar Tanji</option>
+  <option value="Siti Fatimah T">Siti Fatimah T</option>
+  <option value="Syifa Asyara S">Syifa Asyara S</option>
+ </select>
+
+      </div>
+      <div><label for="kelas" class="block text-sm font-medium mb-1" style="color: #374151;">Kelas</label> <select id="kelas" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-400 focus:outline-none transition-colors" style="background: #ffffff;"> 
+          <option value="" disabled selected>Pilih Kelas</option>
+      <option value="XI TKJ 1">XI TKJ 1</option> <option value="XI TKJ 2">XI TKJ 2</option> 
+      <option value="XI TKJ 3">XI TKJ 3</option></select>
+      </div>
+      <div><label class="block text-sm font-medium mb-2" style="color: #374151;">Status Kehadiran</label>
+       <div class="grid grid-cols-2 gap-3"><label class="flex items-center justify-center px-4 py-3 rounded-xl cursor-pointer transition-all border-2 border-green-200 hover:border-green-400 bg-green-50"> <input type="radio" name="status" value="Hadir" class="sr-only" required> <span class="text-green-700 font-medium">✅ Hadir</span> </label> <label class="flex items-center justify-center px-4 py-3 rounded-xl cursor-pointer transition-all border-2 border-yellow-200 hover:border-yellow-400 bg-yellow-50"> <input type="radio" name="status" value="Izin" class="sr-only"> <span class="text-yellow-700 font-medium">📋 Izin</span> </label> <label class="flex items-center justify-center px-4 py-3 rounded-xl cursor-pointer transition-all border-2 border-blue-200 hover:border-blue-400 bg-blue-50"> <input type="radio" name="status" value="Sakit" class="sr-only"> <span class="text-blue-700 font-medium">🏥 Sakit</span> </label> <label class="flex items-center justify-center px-4 py-3 rounded-xl cursor-pointer transition-all border-2 border-red-200 hover:border-red-400 bg-red-50"> <input type="radio" name="status" value="Alpha" class="sr-only"> <span class="text-red-700 font-medium">❌ Alpha</span> </label>
+    
+       </div>
+      </div><button type="submit" id="submit-btn" class="w-full py-4 rounded-xl text-white font-semibold text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg" style="background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);"> Simpan Absen </button>
+     </form>
+     <div id="limit-warning" class="hidden mt-4 p-3 bg-red-100 border border-red-300 rounded-xl text-red-700 text-sm text-center">
+      ⚠️ Batas maksimal 999 data tercapai. Hapus beberapa data terlebih dahulu.
+     </div>
+     <div id="success-message" class="hidden mt-4 p-4 bg-green-100 border border-green-300 rounded-xl text-green-700 text-center">
+      <div class="flex items-center justify-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+       </svg><span class="font-semibold">Absen berhasil disimpan! ✅</span>
+      </div>
+     </div>
+    </div><!-- Statistik -->
+    <div class="max-w-md mx-auto grid grid-cols-4 gap-3 mb-8">
+     <div class="rounded-xl p-4 text-center status-hadir shadow-lg">
+      <div id="count-hadir" class="text-2xl font-bold text-white">
+       0
+      </div>
+      <div class="text-xs text-white/80">
+       Hadir
+      </div>
+     </div>
+     <div class="rounded-xl p-4 text-center status-izin shadow-lg">
+      <div id="count-izin" class="text-2xl font-bold text-white">
+       0
+      </div>
+      <div class="text-xs text-white/80">
+       Izin
+      </div>
+     </div>
+     <div class="rounded-xl p-4 text-center status-sakit shadow-lg">
+      <div id="count-sakit" class="text-2xl font-bold text-white">
+       0
+      </div>
+      <div class="text-xs text-white/80">
+       Sakit
+      </div>
+     </div>
+     <div class="rounded-xl p-4 text-center status-alpha shadow-lg">
+      <div id="count-alpha" class="text-2xl font-bold text-white">
+       0
+      </div>
+      <div class="text-xs text-white/80">
+       Alpha
+      </div>
+     </div>
+    </div><!-- Daftar Absen -->
+    <div class="max-w-md mx-auto">
+     <h2 class="text-xl font-semibold text-white mb-4">📋 Daftar Kehadiran Hari Ini</h2>
+     <div id="attendance-list" class="space-y-3">
+      <div id="empty-state" class="text-center py-12 rounded-2xl" style="background: rgba(255,255,255,0.1);">
+       <div class="text-5xl mb-3">
+        📭
+       </div>
+       <p class="text-gray-300">Belum ada data absen kelas</p>
+       <p class="text-gray-400 text-sm">Mulai isi form di atas</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+<style>
+.btn-rekap {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: px;
+  background: black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 1px;
+}
+</style>
+
+<a href="https://docs.google.com/spreadsheets/d/1-BZwZllIlVoV1RA7ilr8EC85tuFim8GP8OYSb4xwMPM/edit?usp=drivesdk" class="btn-rekap">📝 Lihat Rekap Kehadiran</a>
+
+          <script src="main.js"></script>
+              </body>
+               </html>
